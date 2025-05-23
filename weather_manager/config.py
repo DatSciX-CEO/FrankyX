@@ -12,4 +12,4 @@ It provides a central place for all configuration values used by the application
 from google.adk.models.lite_llm import LiteLlm
 
 # LLM Model Configuration:
-WEATHER_MANAGER_MODEL = LiteLlm(model="ollama_chat/gemma3:4b", temperature=0.75)
+WEATHER_MANAGER_MODEL = LiteLlm(model="ollama_chat/llama3.2:3b", temperature=0.5)
