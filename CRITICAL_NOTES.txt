@@ -1,0 +1,1 @@
+Setup weather api from google https://developers.google.com/maps/documentation/weather/overview
