@@ -13,7 +13,7 @@ components or services.
 """
 
 from google.adk.agents import LlmAgent
-from .config import WEATHER_MANAGER_MODEL # Correct: import model config
+from .config import WEATHER_MANAGER_MODEL, WEATHER_MANAGER_GEMINI_FLASH, WEATHER_MANAGER_GEMINI_PRO
 from . import prompt
 from .tools import weather_data # IMPORT YOUR NEW TOOLS MODULE
 
@@ -27,7 +27,9 @@ available_tools = [
 root_agent = LlmAgent(
     name="weather_manager", # Renamed for clarity if multiple agents
     description="Root agent for the FrankyX Weather application. Manages overall weather-related tasks, including fetching and interpreting weather data using available tools.",
-    model=WEATHER_MANAGER_MODEL,
+ #   model=WEATHER_MANAGER_MODEL,
+    model = WEATHER_MANAGER_GEMINI_FLASH, 
+ #   model = WEATHER_MANAGER_GEMINI_PRO,
     instruction=prompt.FRANKY_X_ROOT_PROMPT,
     tools=available_tools,
 )
