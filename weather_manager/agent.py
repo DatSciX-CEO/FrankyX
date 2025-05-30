@@ -13,23 +13,32 @@ components or services.
 """
 
 from google.adk.agents import LlmAgent
-from .config import WEATHER_MANAGER_MODEL, WEATHER_MANAGER_GEMINI_FLASH, WEATHER_MANAGER_GEMINI_PRO
+from .config import WEATHER_MANAGER_GEMINI_FLASH
 from . import prompt
-from .tools import weather_data # IMPORT YOUR NEW TOOLS MODULE
+from .tools import weather_data
+
+# NEW: Simple session cache
+SESSIONS = {}
+
+def get_session(session_id: str) -> dict:
+    """Creates or retrieves a session from the cache."""
+    if session_id not in SESSIONS:
+        SESSIONS[session_id] = {
+            "confirmed_location": None,
+            "last_weather_data": None
+        }
+    return SESSIONS[session_id]
 
 # Prepare the list of tools for the agent
-# The agent framework will use the function objects and their docstrings
 available_tools = [
     weather_data.get_coordinates_for_location_string,
     weather_data.get_weather_for_location
 ]
 
 root_agent = LlmAgent(
-    name="weather_manager", # Renamed for clarity if multiple agents
-    description="Root agent for the FrankyX Weather application. Manages overall weather-related tasks, including fetching and interpreting weather data using available tools.",
- #   model=WEATHER_MANAGER_MODEL,
-    model = WEATHER_MANAGER_GEMINI_FLASH, 
- #   model = WEATHER_MANAGER_GEMINI_PRO,
+    name="weather_manager",
+    description="Root agent for the FrankyX Weather application. Manages overall weather-related tasks...",
+    model=WEATHER_MANAGER_GEMINI_FLASH,
     instruction=prompt.FRANKY_X_ROOT_PROMPT,
     tools=available_tools,
 )
