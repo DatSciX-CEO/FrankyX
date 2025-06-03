@@ -12,8 +12,12 @@ logger = logging.getLogger(__name__)
 
 def get_coordinates_for_location_string(location_string: str) -> str:
     """
-    Geocodes a location string (e.g., city, zip code) to latitude and longitude.
-    Returns a JSON string with 'latitude', 'longitude', and 'full_address', or an error.
+    Args:
+        location_string: Location to geocode
+    Returns:
+        JSON string with coordinates or error
+    Raises:
+        None (errors returned in JSON)
     """
     logger.info(f"Geocoding location: '{location_string}'")
     
