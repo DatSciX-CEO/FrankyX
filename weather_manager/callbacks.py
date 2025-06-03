@@ -29,7 +29,7 @@ EXTREME_HEAT_C = 35
 EXTREME_COLD_C = 0
 HIGH_WIND_KMH = 40
 HIGH_UV_INDEX = 6
-MODERATE_PRECIP_PROB = 60
+MODERATE_PRECIP_PROB = 40
 
 # --- Helper Functions for Guardrails ---
 # These helpers check for specific conditions based on the raw weather data.
