@@ -2,6 +2,13 @@
 ####################  FrankyX | Weather Manager - Tools         ####################################
 ####################  Developed by: DatSciX                     ####################################
 ####################################################################################################
+
+"""
+Weather Manager Tools
+These tools are used by the Weather Manager agent to perform various weather-related tasks.
+They include geocoding locations to get coordinates and fetching weather data from Open-Meteo.
+"""
+
 import requests
 import json
 import logging

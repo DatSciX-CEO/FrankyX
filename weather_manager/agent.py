@@ -14,7 +14,7 @@ components or services.
 
 from google.adk.agents import LlmAgent
 from .config import WEATHER_MANAGER_GEMINI_FLASH
-from . import prompt
+from .prompts import agent_prompt
 from .tools import weather_data
 
 # NEW: Simple session cache
@@ -39,6 +39,6 @@ root_agent = LlmAgent(
     name="weather_manager",
     description="Root agent for the FrankyX Weather application. Manages overall weather-related tasks...",
     model=WEATHER_MANAGER_GEMINI_FLASH,
-    instruction=prompt.FRANKY_X_ROOT_PROMPT,
+    instruction=agent_prompt.FRANKY_X_ROOT_PROMPT,
     tools=available_tools,
 )

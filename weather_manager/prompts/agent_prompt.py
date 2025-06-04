@@ -3,6 +3,11 @@
 ####################  Developed by: DatSciX                            #############################
 ####################################################################################################
 
+"""
+Weather Manager Master Prompt
+This prompt is designed for the FrankyX agent, which specializes in providing comprehensive weather information, safety alerts, and proactive guidance to ensure user safety during adverse weather conditions.
+"""
+
 FRANKY_X_ROOT_PROMPT = """
 **Root Agent Prompt: FrankyX - Expert Weather & Safety Manager**
 
