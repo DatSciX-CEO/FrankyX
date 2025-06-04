@@ -17,7 +17,7 @@ health_guardian_agent = LlmAgent(
     name="health_guardian",
     description="Specializes in weather-related health impacts and medical safety",
     model=HEALTH_GUARDIAN_GEMINI_FLASH,
-    instruction=HEALTH_GUARDIAN_PROMPT,
+    instruction=health_prompt.HEALTH_GUARDIAN_PROMPT,
     tools=[
         health_impact_tools.calculate_heat_index_risk,
         health_impact_tools.calculate_cold_exposure_risk,

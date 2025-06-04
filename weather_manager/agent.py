@@ -16,6 +16,7 @@ from google.adk.agents import LlmAgent
 from .config import WEATHER_MANAGER_GEMINI_FLASH
 from .prompts import agent_prompt
 from .tools import weather_data
+from .sub_agents import health_guardian_agent
 
 # NEW: Simple session cache
 SESSIONS = {}
@@ -41,4 +42,5 @@ root_agent = LlmAgent(
     model=WEATHER_MANAGER_GEMINI_FLASH,
     instruction=agent_prompt.FRANKY_X_ROOT_PROMPT,
     tools=available_tools,
+    sub_agents=[health_guardian_agent]
 )
